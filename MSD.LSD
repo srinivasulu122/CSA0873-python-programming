@@ -1,0 +1,11 @@
+def get_msd_lsd(number):
+    number_str = str(number)
+    msd = number_str[0]
+    lsd = number_str[-1]
+    return msd, lsd
+
+number = 345667845
+
+msd, lsd = get_msd_lsd(number)
+
+print(f"MSD: {msd} LSD: {lsd}")
