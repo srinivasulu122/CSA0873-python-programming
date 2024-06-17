@@ -1,0 +1,28 @@
+def letter_combinations(dictionary):
+    keys = list(dictionary.keys())
+    result = []
+    
+    def generate_combinations(index, current_combination):
+        if index == len(keys):
+            result.append(current_combination)
+            return
+        
+        key = keys[index]
+        for letter in dictionary[key]:
+            generate_combinations(index + 1, current_combination + letter)
+    
+    generate_combinations(0, "")
+    
+    return result
+
+dictionary = {
+    'A': ['a', 'b'],
+    'B': ['c', 'd'],
+    'C': ['e', 'f']
+}
+
+combinations = letter_combinations(dictionary)
+
+print("All combinations:")
+for combination in combinations:
+    print(combination)
